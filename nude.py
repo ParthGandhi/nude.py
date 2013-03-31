@@ -1,5 +1,7 @@
 import operator
 import argparse
+import sys
+sys.path.insert(0, 'src/')
 
 import Image
 from Pixel import * 
