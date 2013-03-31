@@ -20,6 +20,8 @@ def create_skin_regions(pixels, skin_pixels, skin_regions, width, height):
                 pixel_queue.append(pixel)
                 breadth_first_skin_search(pixels, skin_pixels, region, pixel_queue, width, height)
 
+# Breadth first skin search to find connected component
+# TODO : Fairly slow, any improvements possible?
 def breadth_first_skin_search(pixels, skin_pixels, region, pixel_queue, width, height):
     while not len(pixel_queue) == 0:
         pixel = pixel_queue.popleft()
@@ -62,6 +64,8 @@ def inside_bounding_region(topmost_pixel, bottommost_pixel, rightmost_pixel, lef
     inside_region = inside_region and (side_of_line(bottommost_pixel, leftmost_pixel, pixel) >= 0)
     return inside_region
 
+# Create bounding region as per algorithm
+# Based on polygon created by four points
 def create_bounding_region(pixels, skin_regions, width, height):
     bounding_region = Region()
     topmost_points_list = []

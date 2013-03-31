@@ -1,6 +1,7 @@
 from __future__ import division
 from colorsys import *
 
+# Pixel class
 class Pixel:
     def __init__(self, x, y, red, green, blue):
         self.x = x
@@ -25,6 +26,8 @@ class Pixel:
     def get_y(self):
         return self.y
 
+    # Find if pixel is skin
+    # Skin distribution model taken from nude.js
     def is_skin(self):
         r = self.red
         g = self.green

@@ -8,6 +8,7 @@ from Pixel import *
 from Region import *
 from utils import *
 
+# Analyze regions and find NSFW status
 def contains_nudity(image_path):
     image = Image.open(image_path)
     imgPixels = image.load()
@@ -30,6 +31,7 @@ def contains_nudity(image_path):
     bounding_region = create_bounding_region(pixels, skin_regions, width, height)
     return analyze_regions(skin_pixels, skin_regions, bounding_region, width, height)
 
+# Color skin regions
 def color_skin(image_path):
     save_path = image_path[:-4] + "-skinified.jpg"
     color_skin_regions(image_path, save_path)
