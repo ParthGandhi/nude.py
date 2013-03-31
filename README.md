@@ -3,7 +3,8 @@ nude.py
 
 Nudity detection in Python
 
-This python script allows a user to analyze an image for nudity. It also allows a user to color all skin pixels in an image a given color. 
+This python script allows a user to analyze an image for nudity. 
+It also allows a user to color all skin pixels in an image a given color. 
 
 Inspired by nude.js and based on the following paper : 
 https://sites.google.com/a/dcs.upd.edu.ph/csp-proceedings/Home/pcsc-2005/AI4.pdf?attredirects=0
