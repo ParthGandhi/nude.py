@@ -128,4 +128,4 @@ def color_skin_regions(img_path, save_path):
             pixel = Pixel(i, j, pixels[i,j][0], pixels[i, j][1], pixels[i, j][2])
             if pixel.is_skin():
                 pixels[i, j] = (0, 0, 0)
-    image.save(img_path, save_path)
+    image.save(save_path)
