@@ -1,7 +1,6 @@
 from __future__ import division
 from colorsys import *
 
-# Pixel class
 class Pixel:
     def __init__(self, x, y, red, green, blue):
         self.x = x
@@ -11,23 +10,27 @@ class Pixel:
         self.blue = blue
         self.region = None
 
+    @property
+    def region(self):
+        return self.region
+    @region.setter
+    def region(self, value):
+        self.region = value
+
+    @property
+    def x(self):
+        return self.x
+
+    @property
+    def y(self):
+        return self.y
+
     def in_region(self):
         if self.region == None:
             return False
         else:
             return True
 
-    def set_region(self, region):
-        self.region = region
-
-    def get_x(self):
-        return self.x
-
-    def get_y(self):
-        return self.y
-
-    # Find if pixel is skin
-    # Skin distribution model taken from nude.js
     def is_skin(self):
         r = self.red
         g = self.green
@@ -43,5 +46,5 @@ class Pixel:
         hsvClassifier = (hsv[0] > 0 and hsv[0] < 35 and hsv[1] > 0.23 and hsv[1] < 0.68)
         return (rgbClassifier or normalizedRGBClassifier or hsvClassifier)
 
-    def get_intensity(self):
+    def intensity(self):
         return (self.red + self.green + self.blue)/3
